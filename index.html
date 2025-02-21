@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Garden Team</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Green Garden Team</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="despre.html">Despre Noi</a></li>
+                <li><a href="servicii.html">Servicii</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h2>Bine ați venit la Green Garden Team</h2>
+        <p>Specialiști în amenajarea și întreținerea spațiilor verzi.</p>
+        <a href="servicii.html" class="btn">Vezi Serviciile Noastre</a>
+    </section>
+    
+    <section class="custom-content">
+        <h2>Adaugă conținut personalizat</h2>
+        <p>Puteți adăuga imagini, texte și alte elemente vizuale aici.</p>
+        <div class="image-upload">
+            <p>Încărcați o imagine pentru homepage:</p>
+            <input type="file" id="file-upload" accept="image/*">
+            <img id="preview" src="#" alt="Previzualizare imagine" style="display:none; max-width: 100%;">
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Green Garden Team. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                const preview = document.getElementById('preview');
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
+</body>
+</html>
